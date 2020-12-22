@@ -9,6 +9,7 @@ local fn = vim.fn
 local render_text = {} -- The list of lines to be helm_rendered
 local on_enter -- The function to execute on acceptance of a value
 local guicursor_save -- Backup for the cursor settings
+local ruler_save -- Backup for the ruler settings
 local color_matches = {}
 
 helm_match_buffer = 0
@@ -107,6 +108,7 @@ function helm_exit()
   api.nvim_buf_delete(helm_match_buffer, {})
   api.nvim_buf_delete(helm_prompt_buffer, {})
   vim.o.guicursor = guicursor_save
+  vim.o.ruler = ruler_save
 
   return ''
 end
@@ -509,6 +511,9 @@ function helm_start(opts)
   color_matches = opts.matches and opts.matches or {}
   on_enter = opts.on_enter and opts.on_enter or function(s) print(s) end
   local mappings = opts.mappings and opts.mappings or {}
+
+  ruler_save = vim.o.ruler
+  vim.o.ruler = false
 
   if #helm_match_list > 0 then
     helm_fix_match_list()
