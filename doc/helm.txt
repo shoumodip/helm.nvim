@@ -78,6 +78,9 @@ These are declared in |helm_mappings|. See 'helm-api' for more information.
 <C-n>    The next item
 <C-p>    The previous item
 
+<A-n>    The next region
+<A-p>    The previous region
+
 <Down>   The next item
 <Up>     The previous item
 

@@ -1,7 +1,7 @@
 # Helm - The completion framework for love and life
 ![Helm](img/helm.png)
 
-`Helm` is the elder and cooler brother of [Ido](https://www.github.com/shoumodip/ido.nvim) It is yet another program originally created in Emacsland, but ported to Neovim by yours truly. It is a narrowing framework like `fzf` and the successor to ido. It's main feature is something I came up with on a whim called ***region***.
+`Helm` is the elder and cooler brother of [Ido](https://www.github.com/shoumodip/ido.nvim). It is yet another program originally created in Emacsland, but ported to Neovim by yours truly. It is a narrowing framework like `fzf` and the successor to ido. It's main feature is something I came up with on a whim called ***region***.
 
 # Region
 ![Helm Regions](img/helm_regions.png)
@@ -59,29 +59,39 @@ helm_start({
 This is perfectly alright.
 
 ## Regions are abstract
-The region text is not treated as a match! A region will be shown if and only if said region contains at least one item in it. Do not type out the pattern text of a region and expect to see it. This is done as I consider regions to a an absract reasoning boundary and not an actual item.  Keep that in mind.
+The region text is not treated as a match! A region will be shown if and only if said region contains at least one item in it. Do not type out the pattern text of a region and expect to see it. This is done as I consider regions to be a an abstract reasoning boundary and not an actual item.  Keep that in mind.
 
 
 # Keybindings
 The hotkeys used.
 These are declared in `helm_mappings`. See *helm-api* for more information.
 
+`<A-n>`    The next region
+
+`<A-p>`    The previous region
+
 `<C-n>`    The next item
+
 `<C-p>`    The previous item
 
 `<Down>`   The next item
+
 `<Up>`     The previous item
 
 `<C-f>`    Forward a character
+
 `<C-b>`    Backward a character
 
 `<C-a>`    Start of line
+
 `<C-e>`    End of line
 
 `<Right>`  Forward a character
+
 `<Left>`   Backward a character
 
 `<Return>` Accept the selected item, else accept the pattern text
+
 `<Escape>` Escape Helm, duh.
 
 # How to use Helm.
@@ -250,14 +260,44 @@ The functions defined in helm are --
 # Example Functions
 Helm comes with some useful functions baked in --
 
-`helm_browse()` Browse the filesystem. Bound to `<Leader>.` in Normal mode.
+## Browse
+`helm_browse()` Browse the filesystem.
 
-`helm_buffers(show-hidden)` Switch between buffers. If `show-hidden` is `true`, then the hidden buffers will be shown, else not. `<Leader>,` and `<Leader>bb` are used for opening it without showing the hidden buffers (i.e, `show-hidden` is `false`) in Normal mode. `<Leader>>` and `<Leader>bB` are used for opening it with `show-hidden` set to `true` (i.e, show hidden buffers) in Normal mode.
+Bound to `<Leader>.` in Normal mode.
 
-`helm_describe_function()` Describe a function in Neovim. ***Note:*** Some functions will not have a help file, as this uses the `getcompletion` function of Vim to get the function names, which does'nt care whether they have a help file or not. However most of them (`99%`) will have one. Bound to `<Leader>hf` in Normal mode.
+## Buffers
+`helm_buffers(SHOW-HIDDEN)` Switch between buffers.
 
-`helm_describe_variable()` Describe variables and options in Neovim. ***Note:*** Just like `helm_describe_function()`, some variables will not have a help file, as these are *user-defined* variables, therefore the chance of them having a help file depends on how thoughtful *you* are (jk). Bound to `<Leader>hv` in Normal mode.
+If `SHOW-HIDDEN` is `true`, then the hidden buffers will be shown, else not.
 
-`helm_filetype()` Set the filetype of a particular buffer. This is, **imho**, the greatest function since sliced bread. Bound to `<Leader>ft` in Normal mode.
+`<Leader>,` and `<Leader>bb` are used for opening it without showing the hidden buffers (i.e, `SHOW-HIDDEN` is `false`) in Normal mode.
 
-`helm_command()` Search through the functions available in Neovim. Upon selecting one, it will activate command-mode (`:`) with the command you selected already residing there. Bound to `<Leader>;` in Normal mode.
+`<Leader>>` and `<Leader>bB` are used for opening it with `SHOW-HIDDEN` set to `true` (i.e, show hidden buffers) in Normal mode.
+
+## Describe Function
+`helm_describe_function()` Describe a function in Neovim.
+
+Bound to `<Leader>hf` in Normal mode.
+
+***Note:*** Some functions will not have a help file, as this uses the `getcompletion` function of Vim to get the function names, which does'nt care whether they have a help file or not. However most of them (`99%`) will have one.
+
+## Describe Variable
+`helm_describe_variable()` Describe variables and options in Neovim.
+
+Bound to `<Leader>hv` in Normal mode.
+
+***Note:*** Just like `helm_describe_function()`, some variables will not have a help file, as these are *user-defined* variables, therefore the chance of them having a help file depends on how thoughtful *you* are (jk).
+
+## Filetype
+`helm_filetype()` Set the filetype of a particular buffer.
+
+Bound to `<Leader>ft` in Normal mode.
+
+This is, **imho**, the greatest function since sliced bread.
+
+## Command
+`helm_command()` Search through the functions available in Neovim.
+ 
+Bound to `<Leader>;` in Normal mode.
+
+Upon selecting one, it will activate command-mode (`:`) with the command you selected already residing there.
