@@ -20,7 +20,7 @@ helm_start({
      '# Secondary colors',
      'orange',
      'green',
-     'violet',
+     'magenta',
   },
 
   on_enter = function(c)
@@ -238,11 +238,11 @@ The functions defined in helm are --
 `helm_key_delete` Emulate the delete key in helm.
 
 `helm_move_cursor_left` Move the virtual cursor left a character.
-                  
+
 `helm_move_cursor_right` Move the virtual cursor right a character.
 
 `helm_move_cursor_begin` Move the virtual cursor to the beginning of the pattern.
-                  
+
 `helm_move_cursor_end` Move the virtual cursor to the endning of the pattern.
 
 `helm_next_item` Select the next match.
@@ -297,7 +297,7 @@ This is, **imho**, the greatest function since sliced bread.
 
 ## Command
 `helm_command()` Search through the functions available in Neovim.
- 
+
 Bound to `<Leader>;` in Normal mode.
 
 Upon selecting one, it will activate command-mode (`:`) with the command you selected already residing there.
