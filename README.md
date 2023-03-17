@@ -1,4 +1,10 @@
 # Helm - The completion framework for love and life
+**NOTE: This repo is deprecated. Switch to [Ido](https://github.com/ido-nvim/ido.nvim) and enable vertical mode**
+
+```vim
+lua require("ido").setup{render = require("ido.render").vertical}
+```
+
 ![Helm](img/helm.png)
 
 `Helm` is the elder and cooler brother of [Ido](https://www.github.com/shoumodip/ido.nvim). It is yet another program originally created in Emacsland, but ported to Neovim by yours truly. It is a narrowing framework like `fzf` and the successor to ido. It's main feature is something I came up with on a whim called ***region***.
