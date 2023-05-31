@@ -1,9 +1,5 @@
 # Helm - The completion framework for love and life
-**NOTE: This repo is deprecated. Switch to [Ido](https://github.com/ido-nvim/ido.nvim) and enable vertical mode**
-
-```vim
-lua require("ido").setup{render = require("ido.render").vertical}
-```
+**NOTE: This repo is deprecated. Switch to [Ido](https://github.com/ido-nvim/ido.nvim)**
 
 ![Helm](img/helm.png)
 
